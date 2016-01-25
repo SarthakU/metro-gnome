@@ -9,8 +9,10 @@ function foo()
 document.getElementById('bpm').addEventListener('change', startCount);
 
 function startCount(){
-   stopCount();
-   REFRESH = setInterval(foo, (60000 / this.value));
+    stopCount();
+    var bpm_value = document.getElementById('bpm').value;
+    // console.log(value);
+    REFRESH = setInterval(foo, (60000 / bpm_value));
 }
 
 function stopCount(){
