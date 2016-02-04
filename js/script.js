@@ -1,6 +1,7 @@
 COUNT = 0;
 REFRESH = NaN;
 AUDIO = new Audio('sound/click.ogg');
+PLAYING = false;
 function foo()
 {
     if (COUNT % 4 !== 0 || COUNT == 0)
@@ -49,6 +50,7 @@ function startCount(){
     }
     REFRESH = setInterval(foo, (60000 / bpm_value));
     switchButton('start');
+    PLAYING = true;
 }
 
 function stopCount(){
@@ -59,6 +61,7 @@ function stopCount(){
         list[i].style.visibility = 'hidden';
     }
     COUNT = 0;
+    PLAYING = false;
 }
 
 function switchButton(btn){
@@ -74,5 +77,16 @@ function switchButton(btn){
     }
 }
 
-
-
+document.onkeydown = function(evt) {
+    //start stop on space pressed
+    if (evt.keyCode == 32) {
+        if (PLAYING)
+        {
+            stopCount();
+        }
+        else
+        {
+            startCount();
+        }
+    }
+};
