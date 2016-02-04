@@ -1,4 +1,40 @@
-.stop
+*
+{
+    font-family: 'Source Sans Pro';
+    font-weight: 300;
+}
+.stop, #display
 {
     display: none;
+}
+
+body
+{
+    background: #444;
+}
+input#bpm
+{
+    font-size: 50px;
+    height: 100px;
+    width: 200px;
+    text-align: center;
+    border: unset;
+    background: #655;
+    color: #888;
+    display: block;
+}
+.startStop
+{
+    width: 200px;
+    height: 50px;
+    font-size: 25px;
+    background: #777;
+    color: #444;
+    border: unset;
+}
+
+.container
+{
+    width: 200px;
+    margin: 30px auto;
 }
