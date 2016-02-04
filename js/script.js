@@ -1,16 +1,23 @@
 COUNT = 0;
 REFRESH = NaN;
+AUDIO = new Audio('sound/click.ogg');
 function foo()
 {
     document.getElementById('display').innerHTML = COUNT % 4;
     COUNT += 1;
+    AUDIO.play();
 }
 function sanityCheckVal(val)
 {
-    if (val <= 0)
+    if (val < 0)
     {
         alert("please enter a valid number");
         return false;
+    }
+    else if (val == 0)
+    {
+        alert("You shall die and burn !!");
+        return true;
     }
     return true;
 }
@@ -51,4 +58,6 @@ function switchButton(btn){
         showElem('start');
     }
 }
-autoStartCount();
+
+
+
