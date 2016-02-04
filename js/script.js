@@ -3,7 +3,17 @@ REFRESH = NaN;
 AUDIO = new Audio('sound/click.ogg');
 function foo()
 {
-    document.getElementById('display').innerHTML = COUNT % 4;
+    if (COUNT % 4 !== 0 || COUNT == 0)
+    {
+        document.getElementsByClassName('elem' + COUNT % 4)[0].style.visibility = 'visible';
+    }
+    else
+    {
+        var list = document.getElementsByClassName('elem');
+        for (var i = 1; i < list.length; i++) {
+            list[i].style.visibility = 'hidden';
+        }
+    }
     COUNT += 1;
     AUDIO.play();
 }
@@ -44,6 +54,11 @@ function startCount(){
 function stopCount(){
     clearInterval(REFRESH);
     switchButton('stop');
+    var list = document.getElementsByClassName('elem');
+    for (var i = 0; i < list.length; i++) {
+        list[i].style.visibility = 'hidden';
+    }
+    COUNT = 0;
 }
 
 function switchButton(btn){
