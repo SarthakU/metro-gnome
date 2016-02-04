@@ -51,3 +51,7 @@ input#bpm
     width: 200px;
     margin: 30px auto;
 }
+a, button, input
+{
+    outline: none;
+}
