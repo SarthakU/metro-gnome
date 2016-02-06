@@ -47,8 +47,33 @@ input#bpm
 }
 .container
 {
-    width: 500px;
-    margin: 30px auto;
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.aside
+{
+    position: absolute;
+    width: 200px;
+    height: 100vh;
+    padding: 10px;
+}
+.aside > .title
+{
+    font-family: 'Josefin Sans';
+    color: white;
+    font-size: 35px;
+}
+.aside > .subtitle
+{
+    color: #888;
+    font-size: 20px;
+}
+.main
+{
+    max-width: 500px;
+    margin: 80px auto;
     display: flex;
 }
 .decrement, .increment
@@ -60,7 +85,7 @@ input#bpm
     font-size: 45px;
     background: #777;
     color: #444;
-    margin: 60px 30px;
+    margin: 60px 15px;
     vertical-align: center;
     border-radius: 3px;
 }
