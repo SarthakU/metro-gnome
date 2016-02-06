@@ -1,9 +1,20 @@
 COUNT = 0;
 REFRESH = NaN;
 AUDIO = new Audio('sound/click.ogg');
+PLAYING = false;
 function foo()
 {
-    document.getElementById('display').innerHTML = COUNT % 4;
+    if (COUNT % 4 !== 0 || COUNT == 0)
+    {
+        document.getElementsByClassName('elem' + COUNT % 4)[0].style.visibility = 'visible';
+    }
+    else
+    {
+        var list = document.getElementsByClassName('elem');
+        for (var i = 1; i < list.length; i++) {
+            list[i].style.visibility = 'hidden';
+        }
+    }
     COUNT += 1;
     AUDIO.play();
 }
@@ -39,11 +50,18 @@ function startCount(){
     }
     REFRESH = setInterval(foo, (60000 / bpm_value));
     switchButton('start');
+    PLAYING = true;
 }
 
 function stopCount(){
     clearInterval(REFRESH);
     switchButton('stop');
+    var list = document.getElementsByClassName('elem');
+    for (var i = 0; i < list.length; i++) {
+        list[i].style.visibility = 'hidden';
+    }
+    COUNT = 0;
+    PLAYING = false;
 }
 
 function switchButton(btn){
@@ -59,5 +77,16 @@ function switchButton(btn){
     }
 }
 
-
-
+document.onkeydown = function(evt) {
+    //start stop on space pressed
+    if (evt.keyCode == 32) {
+        if (PLAYING)
+        {
+            stopCount();
+        }
+        else
+        {
+            startCount();
+        }
+    }
+};

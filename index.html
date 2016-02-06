@@ -3,14 +3,23 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Metro Gnome</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <input type="number"  placeholder="BPM" id='bpm' onkeyup='startCount()'>
-    <div id="display" data-play='true'>0</div>
-    <script src="js/script.js" type="text/javascript"></script>
-    <button class="startStop stop" onclick="stopCount()">Stop</button>
-    <button class="startStop start" onclick="startCount()">Start</button>
+    <div class="container">
+        <div id="display" data-play='true'>
+            <div class="elem elem0"></div>
+            <div class="elem elem1"></div>
+            <div class="elem elem2"></div>
+            <div class="elem elem3"></div>
+        </div>
+        <input  placeholder="BPM" id='bpm' onkeyup='startCount()'>
+        <script src="js/script.js" type="text/javascript"></script>
+        <button class="startStop stop" onclick="stopCount()">Stop</button>
+        <button class="startStop start" onclick="startCount()">Start</button>
+    </div>
 </body>
 </html>

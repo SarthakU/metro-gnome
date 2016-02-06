@@ -1,4 +1,57 @@
+*
+{
+    font-family: 'Source Sans Pro';
+    font-weight: 300;
+}
 .stop
 {
     display: none;
+}
+#display
+{
+    height: 25px;
+    width: 100%;
+    display: flex;
+    /*background: #777;*/
+}
+#display > .elem
+{
+    visibility: hidden;
+    height: 100%;
+    flex: 1;
+    background: #777;
+}
+body
+{
+    background: #444;
+}
+input#bpm
+{
+    font-size: 50px;
+    height: 100px;
+    width: 200px;
+    text-align: center;
+    border: unset;
+    background: #655;
+    color: #888;
+    display: block;
+}
+.startStop
+{
+    width: 200px;
+    height: 50px;
+    font-size: 25px;
+    background: #777;
+    color: #444;
+    border: unset;
+}
+
+.container
+{
+    width: 200px;
+    margin: 30px auto;
+}
+a, button, input
+{
+    outline: none;
 }
