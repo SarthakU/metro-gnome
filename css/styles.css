@@ -45,13 +45,28 @@ input#bpm
     color: #444;
     border: unset;
 }
-
 .container
 {
-    width: 200px;
+    width: 500px;
     margin: 30px auto;
+    display: flex;
+}
+.decrement, .increment
+{
+    width: 60px;
+    text-align: center;
+    height: 60px;
+    line-height: 60px;
+    font-size: 45px;
+    background: #777;
+    color: #444;
+    margin: 60px 30px;
+    vertical-align: center;
+    border-radius: 3px;
 }
 a, button, input
 {
     outline: none;
+    border: unset;
+    cursor: pointer;
 }

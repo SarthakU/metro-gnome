@@ -2,6 +2,11 @@ COUNT = 0;
 REFRESH = NaN;
 AUDIO = new Audio('sound/click.ogg');
 PLAYING = false;
+function init()
+{
+    document.getElementById('bpm').value = 0;
+}
+init();
 function foo()
 {
     if (COUNT % 4 !== 0 || COUNT == 0)
@@ -90,3 +95,16 @@ document.onkeydown = function(evt) {
         }
     }
 };
+
+// increment bpm by val
+function increment(val){
+    var current_value = parseInt(document.getElementById('bpm').value);
+    document.getElementById('bpm').value = parseInt(val) + current_value;
+    startCount();
+}
+
+// decrement bpm by val
+function decrement(val)
+{
+    increment(-val);
+}
