@@ -18,6 +18,20 @@
     <div class="main">
       <button class="decrement" onclick="decrement(1)">-</button>
       <div class="display-container">
+        <div class="switches">
+          <div class="accent">
+            <div class="label">Accent</div>
+            <div class="switch" onclick="this.classList.toggle('on')">
+              <div class="slider"></div>
+            </div>
+          </div>
+          <div class="trainer">
+            <div class="label">Trainer</div>
+            <div class="switch on" onclick="this.classList.toggle('on')">
+              <div class="slider"></div>
+            </div>
+          </div>
+        </div>
         <div id="display" data-play='true'>
           <div class="elem elem0"></div>
           <div class="elem elem1"></div>
