@@ -3,6 +3,7 @@ REFRESH = NaN;
 AUDIO = new Audio('sound/click.ogg');
 AUDIO_ACCENT = new Audio('sound/click-accent.ogg');
 PLAYING = false;
+ACCENT = true;
 function init()
 {
     document.getElementById('bpm').value = 0;
@@ -13,7 +14,7 @@ function foo()
     if (COUNT % 4 !== 0 || COUNT == 0)
     {
         document.getElementsByClassName('elem' + COUNT % 4)[0].style.visibility = 'visible';
-        if (COUNT%4 == 3)
+        if (COUNT%4 == 3 && ACCENT)
         {
             AUDIO_ACCENT.play();
         }
@@ -116,4 +117,22 @@ function increment(val){
 function decrement(val)
 {
     increment(-val);
+}
+
+function switchToggle(elem)
+{
+    elem.classList.toggle('on');
+}
+
+function switchAccent(elem)
+{
+    switchToggle(elem);
+    if (ACCENT)
+    {
+        ACCENT = false;
+    }
+    else
+    {
+        ACCENT = true;
+    }
 }
