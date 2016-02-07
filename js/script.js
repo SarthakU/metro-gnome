@@ -1,6 +1,7 @@
 COUNT = 0;
 REFRESH = NaN;
 AUDIO = new Audio('sound/click.ogg');
+AUDIO_ACCENT = new Audio('sound/click-accent.ogg');
 PLAYING = false;
 function init()
 {
@@ -12,6 +13,14 @@ function foo()
     if (COUNT % 4 !== 0 || COUNT == 0)
     {
         document.getElementsByClassName('elem' + COUNT % 4)[0].style.visibility = 'visible';
+        if (COUNT%4 == 3)
+        {
+            AUDIO_ACCENT.play();
+        }
+        else
+        {
+            AUDIO.play();
+        }
     }
     else
     {
@@ -19,9 +28,9 @@ function foo()
         for (var i = 1; i < list.length; i++) {
             list[i].style.visibility = 'hidden';
         }
+        AUDIO.play();
     }
     COUNT += 1;
-    AUDIO.play();
 }
 function sanityCheckVal(val)
 {
